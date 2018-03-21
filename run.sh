@@ -112,9 +112,9 @@ if [ $stage -le 2 ]; then
   file_enc=$(file -i $corpus/script_nmbd_by_sentence.txt | sed 's/.*charset=//g')
 
   #For Python2
-  python utils/extract_trans_p2.py $corpus/script_nmbd_by_sentence.txt "$file_enc" > $corpus/trans.txt
+  #python utils/extract_trans_p2.py $corpus/script_nmbd_by_sentence.txt "$file_enc" > $corpus/trans.txt
   #For Python3
-  #python utils/extract_trans_p3.py $corpus/script_nmbd_by_sentence.txt "$file_enc" > $corpus/trans.txt
+  python utils/extract_trans_p3.py $corpus/script_nmbd_by_sentence.txt "$file_enc" > $corpus/trans.txt
 
   if [ "$(wc -l $corpus/trans.txt | awk '{print $1}')" -ne 930 ];then
     echo "$corpus/trans.txt should have 930 lines. Please check!"
